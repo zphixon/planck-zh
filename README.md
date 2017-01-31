@@ -1,5 +1,5 @@
 
-# zh2
+# zh
 
 This is [my](https://github.com/cheezgi) layout. I have some pretty neat stuff
 in it.
@@ -13,4 +13,7 @@ in it.
 
 That's about it. There's still some wasted space in the bottom layers
 but I can easily fix that. (by adding more tri-layers because why not)
+
+In order to install this layout, clone this repo and place it in the `keymaps`
+directory, then run `make rev4-zh-<programmer>` from the `planck` directory.
 
