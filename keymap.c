@@ -5,9 +5,6 @@
 
 extern keymap_config_t keymap_config;
 
-// zackh planck layout - too many tri-layers? nah m9
-// raise + lower = roll
-// spin + flap = screw
 #define _______ KC_TRNS
 #define XXXXXXX KC_NO
 
@@ -54,7 +51,7 @@ enum planck_keycodes {
 // layer maps
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-    // colemak layer: default
+    // colemak layer, default
     [__COLEMAK] = {
       {KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSPC},
       {KC_ESC,  KC_A,    KC_R,    KC_S,    KC_T,    KC_D,    KC_H,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT},
@@ -62,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       {KC_LCTL, SPIN,    KC_LALT, KC_LGUI, LOWER,   KC_SPC,  KC_SPC,  RAISE,   _LAYOUT, XXXXXXX, XXXXXXX, FLAP   }
     },
 
-    // also support qwerty layer
+    // qwerty layout for vim/programming
     [__QWERTY] = {
       {KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC},
       {KC_ESC,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT},
@@ -70,7 +67,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       {KC_LCTL, SPIN,    KC_LALT, KC_LGUI, LOWER,   KC_SPC,  KC_SPC,  RAISE,   _LAYOUT, XXXXXXX, XXXXXXX, FLAP   }
     },
 
-    // lower: symbols, movement, mouse movement, F keys
+    // lower: symbols, arrows, mouse movement
     [__LOWER] = {
       {KC_GRV,  KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_MINS, KC_EQL,  _______},
       {_______, _______, _______, KC_LPRN, KC_RPRN, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, KC_BSLS},
@@ -78,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       {_______, _______, _______, _______, _______, _______, _______, _______, KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_D}
     },
 
-    // raise: {} () [], keypad, macros
+    // raise: ()[]{}, numbers, misc movement
     [__RAISE] = {
       {_______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______},
       {_______, _______, _______, KC_LPRN, KC_RPRN, _______, _______, KC_HOME, KC_END,  KC_INS,  KC_PSCR, _______},
@@ -86,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       {_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______}
     },
 
-    // switch base layers
+    // roll: macros for sharex screen capture, virtualbox management, audio
     [__ROLL] = {
       {RESET,   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_DEL },
       {_______, _CAPREC, _CAPWIN, _CAPSCR, _CAPREG, _______, _______, _VMEXIT, AU_ON,   AU_OFF,  _______, _______},
@@ -94,7 +91,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       {_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______}
     },
 
-    // spin: number pad, maybe other stuff later?
+    // spin: number pad
     [__SPIN] = {
       {_______, _______, _______, _______, _______, _______, KC_NLCK, KC_7,    KC_8,    KC_9,    KC_PMNS, _______},
       {_______, _______, _______, _______, _______, _______, _______, KC_4,    KC_5,    KC_6,    KC_PPLS, _______},
@@ -102,7 +99,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       {_______, _______, _______, _______, _______, _______, _______, KC_0,    KC_0,    KC_DOT,  KC_PSLS, _______}
     },
 
-    // okay this is taking it a bit too far...
+    // flap: function keys
     [__FLAP] = {
       {_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_DEL },
       {_______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   _______, _______, _______, _______, _______},
@@ -110,7 +107,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       {_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______}
     },
 
-    // why
+    // screw: there's really no reason why this should exist
     [__SCREW] = {
       {_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______},
       {_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______},
@@ -118,10 +115,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       {_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______}
     },
 
-    // I can do more but I think I'm out of space in ROM
-    // lmao
+    // there's room for more tri-layers but I think I have enough
 };
 
+// keep track of current layout
+// TODO: move to the actual layout numbers/some sort of bit flags
 #define CM_LAYOUT 0
 #define QT_LAYOUT 1
 static int current_layout = CM_LAYOUT;
@@ -132,12 +130,17 @@ void persistant_default_layer_set(uint16_t default_layer) {
     default_layer_set(default_layer);
 }
 
-float tone_qwerty[][2]     = SONG(QWERTY_SOUND);
-float tone_colemak[][2]    = SONG(COLEMAK_SOUND);
+// little jingles for switching layouts, copied from default layout
+float tone_qwerty[][2] = SONG(QWERTY_SOUND);
+float tone_colemak[][2] = SONG(COLEMAK_SOUND);
 
 // macros
 const macro_t* action_get_macro(keyrecord_t* record, uint8_t id, uint8_t opt) {
     switch (id) {
+    // switch layout: not technically a macro, but it needs to be here since
+    // the other function is just for momentary key presses
+    // I'm sure there's a better way to do this other than
+    // defining a macro, but whatever
     case LAYOUT:
         if (record->event.pressed) {
             if (current_layout == CM_LAYOUT) {
@@ -152,31 +155,35 @@ const macro_t* action_get_macro(keyrecord_t* record, uint8_t id, uint8_t opt) {
             return MACRO_NONE;
         }
         break;
+
+    // exit virtualbox fullscreen
     case VMEXIT:
         if (record->event.pressed) {
             return MACRO( I(50), D(F12), T(F), U(F12), END );
         }
         break;
+
+    // sharex macros
     case CAPWIN:
-        // capture window with puu.sh
+        // capture window with sharex
         if (record->event.pressed) {
             return MACRO( I(50), D(LALT), T(END), U(LALT), END );
         }
         break;
     case CAPREC:
-        // record screen with puu.sh
+        // record screen with sharex
         if (record->event.pressed) {
             return MACRO( I(50), D(LALT), T(HOME), U(LALT), END );
         }
         break;
     case CAPSCR:
-        // screenie with puu.sh
+        // screenie with sharex
         if (record->event.pressed) {
             return MACRO( I(50), D(LCTL), T(HOME), U(LCTL), END );
         }
         break;
     case CAPREG:
-        // capture region with puu.sh
+        // capture region with sharex
         if (record->event.pressed) {
             return MACRO( I(50), D(LCTL), T(END), U(LCTL), END );
         }
@@ -185,7 +192,7 @@ const macro_t* action_get_macro(keyrecord_t* record, uint8_t id, uint8_t opt) {
     return MACRO_NONE;
 }
 
-// called every time a user-defined key code is pressed
+// function layers
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
     switch (keycode) {
     case FLAP:
