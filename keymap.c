@@ -18,7 +18,6 @@ extern keymap_config_t keymap_config;
 #define __FLAP 6
 
 // tri-layers
-#define __SCREW 15
 #define __ROLL 16
 
 // macros
@@ -107,14 +106,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       {_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______}
     },
 
-    // screw: there's really no reason why this should exist
-    [__SCREW] = {
-      {_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______},
-      {_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______},
-      {_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______},
-      {_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______}
-    },
-
     // there's room for more tri-layers but I think I have enough
 };
 
@@ -195,26 +186,6 @@ const macro_t* action_get_macro(keyrecord_t* record, uint8_t id, uint8_t opt) {
 // function layers
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
     switch (keycode) {
-    case FLAP:
-        if (record->event.pressed) {
-            layer_on(__FLAP);
-            update_tri_layer(__SPIN, __FLAP, __SCREW);
-        } else {
-            layer_off(__FLAP);
-            update_tri_layer(__SPIN, __FLAP, __SCREW);
-        }
-        return false;
-        break;
-    case SPIN:
-        if (record->event.pressed) {
-            layer_on(__SPIN);
-            update_tri_layer(__SPIN, __FLAP, __SCREW);
-        } else {
-            layer_off(__SPIN);
-            update_tri_layer(__SPIN, __FLAP, __SCREW);
-        }
-        return false;
-        break;
     case LOWER:
         if (record->event.pressed) {
             layer_on(__LOWER);
