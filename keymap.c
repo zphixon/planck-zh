@@ -184,6 +184,22 @@ const macro_t* action_get_macro(keyrecord_t* record, uint8_t id, uint8_t opt) {
 // function layers
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
     switch (keycode) {
+    case FLAP:
+        if (record->event.pressed) {
+            layer_on(__FLAP);
+        } else {
+            layer_off(__FLAP);
+        }
+        return false;
+        break;
+    case SPIN:
+        if (record->event.pressed) {
+            layer_on(__SPIN);
+        } else {
+            layer_off(__SPIN);
+        }
+        return false;
+        break;
     case LOWER:
         if (record->event.pressed) {
             layer_on(__LOWER);
