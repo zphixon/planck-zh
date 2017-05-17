@@ -77,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // raise: ()[]{}, numbers, misc movement
     [__RAISE] = {
       {S(KC_GRV),KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_MINS, KC_EQL,  _______},
-      {_______,  _______, KC_LCBR, KC_LBRC, KC_LPRN, _______, _______, KC_RPRN, KC_RBRC, KC_RCBR, _______, _______},
+      {_______,  _______, KC_LCBR, KC_LBRC, KC_LPRN, _______, _______, KC_RPRN, KC_RBRC, KC_RCBR, _______, S(KC_BSLS)},
       {_______,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______},
       {_______,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______}
     },
@@ -105,8 +105,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       {_______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  _______, _______, _______, _______, _______},
       {_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______}
     },
-
-    // there's room for more tri-layers but I think I have enough
 };
 
 // keep track of current layout
