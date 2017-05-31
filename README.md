@@ -17,3 +17,5 @@ but I can easily fix that. (by adding more tri-layers because why not)
 In order to install this layout, clone this repo and place it in the `keymaps`
 directory, then run `make rev4-zh-<programmer>` from the `planck` directory.
 
+![keymap](https://github.com/cheezgi/planck-zh/blob/master/keyboard-layout.png)
+
