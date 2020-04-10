@@ -135,11 +135,11 @@ const macro_t* action_get_macro(keyrecord_t* record, uint8_t id, uint8_t opt) {
             if (current_layout == CM_LAYOUT) {
                 current_layout = QT_LAYOUT;
                 persistant_default_layer_set(1UL<<__QWERTY);
-                PLAY_NOTE_ARRAY(tone_qwerty, false, 0);
+                PLAY_SONG(tone_qwerty);
             } else {
                 current_layout = CM_LAYOUT;
                 persistant_default_layer_set(1UL<<__COLEMAK);
-                PLAY_NOTE_ARRAY(tone_colemak, false, 0);
+                PLAY_SONG(tone_colemak);
             }
             return MACRO_NONE;
         }
