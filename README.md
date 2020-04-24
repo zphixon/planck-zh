@@ -1,7 +1,7 @@
 
 # zh
 
-This is [my](https://github.com/cheezgi) layout. I have some pretty neat stuff
+This is [my](https://github.com/zphixon) layout. I have some pretty neat stuff
 in it.
 
 * Parentheses, brackets, braces on index, middle, and ring fingers
